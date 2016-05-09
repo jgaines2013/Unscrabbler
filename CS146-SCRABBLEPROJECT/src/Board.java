@@ -14,11 +14,19 @@ public class Board
         board = b;
     }
     
+    /**
+     * Adds a character to the board at a certain position
+     * @param i The column of the character
+     * @param j The row of the character
+     */
     public void add(int i, int j, char c)
     {
         board[i][j] = c;
     }
     
+    /**
+     * @return A Queue holding the positions of all characters currently on the board
+     */
     public Queue<Position> Scan()
     {
         Queue<Position> p = new LinkedList<Position>();
@@ -33,6 +41,12 @@ public class Board
         return p;
     }
     
+    /**
+     * Returns a word when given the start and end index on the board
+     * @param start The position of the start of the word
+     * @param end The position of the end of the word
+     * @return All characters in between and including both positions
+     */
     public String wordAt(Position start, Position end)
     {
         String word = "";

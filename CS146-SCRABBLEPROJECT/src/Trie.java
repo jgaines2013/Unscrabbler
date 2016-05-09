@@ -73,17 +73,19 @@ public class Trie {
 		return false;
 	}
 	
-	
-	
+	/**
+	 * Prints the word from the last TrieNode visited
+	 * For example, if wanting to print the word "hello" we would set n to the TrieNode of o
+	 * @param n The last TrieNode in the word
+	 * @return The word
+	 */
 	public String printTrie(TrieNode n)
 	{
 	    if(n.parent == null)
 	        return "" + n.character;
 	    else
 	        return printTrie(n.parent) + n.character;
-	}
-	
-	
+	}	
 }
 
 
