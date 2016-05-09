@@ -42,6 +42,16 @@ public class Board
     }
     
     /**
+     * Returns the character at a specific position
+     * @param p The position of the character
+     * @return The character
+     */
+    public char characterAt(Position p)
+    {
+        return board[p.i][p.j];
+    }
+    
+    /**
      * Returns a word when given the start and end index on the board
      * @param start The position of the start of the word
      * @param end The position of the end of the word
