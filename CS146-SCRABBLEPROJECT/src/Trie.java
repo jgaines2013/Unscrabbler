@@ -17,6 +17,8 @@ public class Trie {
 			if (p.arr[index] == null)
 			{
 				TrieNode temp = new TrieNode();
+				temp.character = c;
+				temp.parent = p;
 				//branches off again.
 				p.arr[index] = temp;
 				p = temp;
@@ -29,6 +31,7 @@ public class Trie {
 	
 	public TrieNode searchNode(String word)
 	{
+	    word = word.toLowerCase();
 		TrieNode p = root;
 		for (int i = 0; i < word.length(); i++)
 		{
@@ -69,6 +72,17 @@ public class Trie {
 		
 		return false;
 	}
+	
+	
+	
+	public String printTrie(TrieNode n)
+	{
+	    if(n.parent == null)
+	        return "" + n.character;
+	    else
+	        return printTrie(n.parent) + n.character;
+	}
+	
 	
 }
 
