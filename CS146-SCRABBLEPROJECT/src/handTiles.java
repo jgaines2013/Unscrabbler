@@ -29,10 +29,12 @@ public class handTiles {
 		permutation(permLetters);
 		}
 		
+		/**
 		for (String s: listOfPerm)
 		{System.out.println(s);} 
 		
 		System.out.println("Num of Permutations: " + listOfPerm.size());
+		*/
 		
 		return listOfPerm;
 	}
