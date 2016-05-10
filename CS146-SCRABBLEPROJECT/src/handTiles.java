@@ -19,12 +19,18 @@ public class handTiles {
 	//note: CHANGE PARAMETER TO POSITION
 	public ArrayList<String> getAllWords(char anchor)
 	{
-		String allUsableLetters = new String(hand);
-		allUsableLetters += Character.toString(anchor);
-		permutation(allUsableLetters);
+		String allUsableLetters = Character.toString(anchor);
+		allUsableLetters += new String(hand);
+		
+		//needs permutations with length 1,2,3...8
+		for (int x = 1; x < allUsableLetters.length(); x++)
+		{
+		String permLetters = allUsableLetters.substring(0,x);
+		permutation(permLetters);
+		}
 		
 		for (String s: listOfPerm)
-		{System.out.println(s);}
+		{System.out.println(s);} 
 		
 		System.out.println("Num of Permutations: " + listOfPerm.size());
 		
