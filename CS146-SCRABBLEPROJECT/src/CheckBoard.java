@@ -2,7 +2,7 @@ import java.util.*;
 
 public class CheckBoard
 {
-    private PriorityQueue<String> heap;
+     PriorityQueue<String> heap;
     private Queue<Position> q;
     String word;
 
@@ -17,9 +17,9 @@ public class CheckBoard
             {
                 if(t.search(word))
                 {
-                    for(int i = 0; i < pos.i; i++)
+                    for(int i = 0; i <= pos.j; i++)
                     {
-                        if(word.length() < pos.i + 1 || word.charAt(i) == pos.character)
+                        if(word.length() <= pos.j + 1 || word.charAt(i) == pos.character)
                             heap.add(word);
                     }
                 }
@@ -27,19 +27,23 @@ public class CheckBoard
         }
         
         word = heap.poll();
-    }
-    
-    /* Currently working on this
-    public Board createBoard(Board b, String word)
-    {
-        word = this.word;
+        
+        Position anchor = q.peek();
         for(Position pos : q)
         {
-            if(word.indexOf(pos.character) > 0)
-            {
-                
-            }
+            for(int i = 0; i < word.length(); i++)
+                if(word.charAt(i) == pos.character)
+                    anchor = pos;
         }
+        b.addWord(anchor, word);
+        
+    }
+    
+    /*
+    public Board createBoard(Board b, String word)
+    {
+        b.addWord(anchor, word);
     }
     */
+    
 }

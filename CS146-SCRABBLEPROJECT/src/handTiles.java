@@ -17,31 +17,25 @@ public class handTiles {
 	//anchor is	 a letter on a board. 
 	//this method returns all anagrams of the letters.
 	//note: CHANGE PARAMETER TO POSITION
-	public ArrayList<String> getAllWords(char anchor)
+	public ArrayList<String> getAllWords(Position anchor)
 	{
-		String allUsableLetters = Character.toString(anchor);
-		allUsableLetters += new String(hand); //allUsableLetters = tabcdefg;
+		String allUsableLetters = Character.toString(anchor.character);
+		allUsableLetters += new String(hand);
 		
-		for (int y = 1; y < allUsableLetters.length(); y++)
+		//needs permutations with length 1,2,3...8
+		for (int x = 1; x < allUsableLetters.length(); x++)
 		{
-			for (int x = y; x < allUsableLetters.length(); x++)
-			{
-				String tempLetters = allUsableLetters.substring(0, y) + allUsableLetters.substring(x,x+1);
-				//String permLetters = allUsableLetters.substring(0,x);
-				permutation(tempLetters);
-			}
+		String permLetters = allUsableLetters.substring(0,x);
+		permutation(permLetters);
 		}
 		
-//		
-//		for (String s: listOfPerm)
-//		{System.out.println(s);} 
-		
-//		System.out.println("First 100 indexes of listOfPerm:");
-//		for (int n = 0; n < 100; n++)
-//		{System.out.println(listOfPerm.get(n));}
-//		
+		/*
+		for (String s: listOfPerm)
+		{System.out.println(s);} 
 		
 		System.out.println("Num of Permutations: " + listOfPerm.size());
+		*/
+		
 		return listOfPerm;
 	}
 	

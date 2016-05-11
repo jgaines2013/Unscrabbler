@@ -20,6 +20,7 @@ public class Test
         }
         handTiles hand = new handTiles("acker");
         CheckBoard cb = new CheckBoard();
+        //Queue<Position> that = board.Scan();
         cb.check(board, test, hand);
         System.out.println(board);
         System.out.println(cb.heap);

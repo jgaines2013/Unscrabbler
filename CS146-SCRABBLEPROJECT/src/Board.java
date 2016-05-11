@@ -109,8 +109,8 @@ public class Board
         {
             for(int j = 0; j < board[0].length; j++)
             {
-                if(board[i][j] != 0)
-                   if(board[i+1][j] == 0 && board[i-1][j] == 0)
+                if(board[i][j] != '.')
+                   if(board[i][j+1] == '.' && board[i][j-1] == '.')
                 	   	p.add(new Position(i,j,board[i][j]));
             }
         }
