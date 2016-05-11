@@ -12,5 +12,16 @@ public class Test
         }
         in.close();
         
+        String testWord = "hello";
+        Board board = new Board();
+        for(int i = 0; i < testWord.length(); i++)
+        {
+            board.add(i + 8, 4, testWord.charAt(i));
+        }
+        handTiles hand = new handTiles("acker");
+        CheckBoard cb = new CheckBoard();
+        cb.check(board, test, hand);
+        System.out.println(board);
+        System.out.println(cb.heap);
     }
 }
